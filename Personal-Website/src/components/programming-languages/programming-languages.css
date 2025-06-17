@@ -1,0 +1,28 @@
+.icon {
+  width: 20%;
+  height: auto;
+  border-radius: 0.5rem;
+  background-color: rgba(128, 10, 196, 0.2); /* halbtransparentes Lila */
+  box-shadow: 0 4px 16px rgba(128, 10, 196, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Für Safari */
+  padding: 0.5rem;
+  animation: fly-in-from-bottom 2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .icon {
+    width: 50%;
+
+  }
+}
+
+@keyframes fly-in-from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

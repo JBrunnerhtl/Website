@@ -1,0 +1,25 @@
+h1.blur-text{
+
+  color: transparent;
+  text-shadow: 0 0 16px #800ac4, 0 0 32px #800ac4;
+  animation: fly-in-from-bottom 1s ease-in-out;
+}
+h1.normal-text
+{
+  color: #7C02C4 !important;
+  animation: fly-in-from-bottom 1s ease-in-out;
+
+}
+
+@keyframes fly-in-from-bottom {
+  from{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

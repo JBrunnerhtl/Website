@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Navbar} from '../components/navbar/navbar';
+import {HeaderName} from '../components/header-name/header-name';
+import {ProgrammingLanguages} from '../components/programming-languages/programming-languages';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar],
-  template: `
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
-  `
+  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages],
+  templateUrl: './app.html'
 
 })
 export class App {
