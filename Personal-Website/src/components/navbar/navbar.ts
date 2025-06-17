@@ -21,7 +21,7 @@ export class Navbar implements AfterViewInit {
         const a = document.createElement('a');
         a.href = link.url;
         a.textContent = link.name;
-        a.className = 'dropdown-item';
+        a.className = 'dropdown-item text-in-nav';
         li.appendChild(a);
         dropdown.appendChild(li);
       })
