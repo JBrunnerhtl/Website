@@ -1,33 +1,59 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   imports: [],
-  templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+
+  styleUrl: './navbar.css',
+  template: `
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-in-nav" href="#">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            @for (item of navbarItems; track item) {
+              <li class = "nav-item"><a href = "item.url" class = "nav-link text-in-nav">{{item.name}}</a></li>
+            }
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-in-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                @for (link of links; track link) {
+                <li><a class="dropdown-item text-in-nav" href="{{link.url}}">{{link.name}}</a></li>
+                }
+              </ul>
+            </li>
+
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  `
 })
-export class Navbar implements AfterViewInit {
+export class Navbar{
   links = [
     {name: 'Home', url: '/'},
     {name: 'About', url: '/about'},
     {name: 'Contact', url: '/contact'},
     ];
 
-    initDropDown() {
-      const dropdown = document.querySelector('.dropdown-menu');
-      if(!dropdown) return;
-      this.links.forEach(link => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = link.url;
-        a.textContent = link.name;
-        a.className = 'dropdown-item text-in-nav';
-        li.appendChild(a);
-        dropdown.appendChild(li);
-      })
-    }
+  navbarItems = [
+    {name: 'example1', url: '/'},
+    {name: 'example2', url: '/about'},
+    {name: 'example3', url: '/contact'},
+  ];
 
-  ngAfterViewInit() {
-      this.initDropDown();
-  }
+  title = "Navbar";
 }
