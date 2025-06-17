@@ -1,48 +1,20 @@
 import {Component} from '@angular/core';
+import {Router, RouterLink} from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
 
   styleUrl: './navbar.css',
-  template: `
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand text-in-nav" href="#">{{title}}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            @for (item of navbarItems; track item) {
-              <li class = "nav-item"><a href = "item.url" class = "nav-link text-in-nav">{{item.name}}</a></li>
-            }
-
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-in-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                @for (link of links; track link) {
-                <li><a class="dropdown-item text-in-nav" href="{{link.url}}">{{link.name}}</a></li>
-                }
-              </ul>
-            </li>
-
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-
-  `
+  templateUrl : './navbar.html',
 })
 export class Navbar{
+  constructor(private router : Router) {
+    // You can inject the Router service if you need to navigate programmatically
+  }
   links = [
     {name: 'Home', url: '/'},
     {name: 'About', url: '/about'},
@@ -52,8 +24,9 @@ export class Navbar{
   navbarItems = [
     {name: 'example1', url: '/'},
     {name: 'example2', url: '/about'},
-    {name: 'example3', url: '/contact'},
+    {name: 'example3', url: '/contact'}
   ];
+
 
   title = "Navbar";
 }
