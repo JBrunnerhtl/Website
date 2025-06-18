@@ -7,7 +7,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* Für Safari */
   padding: 0.5rem;
-  animation: fly-in-from-bottom 2s ease-in-out;
+  animation: fly-in-from-bottom 2s ease-out forwards;
 }
 @media (max-width: 768px) {
   .icon {
@@ -15,6 +15,7 @@
 
   }
 }
+
 
 @keyframes fly-in-from-bottom {
   from {
