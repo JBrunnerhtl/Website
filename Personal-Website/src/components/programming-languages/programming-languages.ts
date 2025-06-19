@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {HeaderName} from '../header-name/header-name';
+import {Introduction} from '../introduction/introduction';
 
 
 @Component({
   selector: 'app-programming-languages',
   imports: [
     HeaderName,
+    Introduction,
 
   ],
   templateUrl: './programming-languages.html',
