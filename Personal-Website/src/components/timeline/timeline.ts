@@ -1,16 +1,17 @@
 import {AfterViewInit, Component} from '@angular/core';
+import {HeaderName} from '../header-name/header-name';
 
 @Component({
   selector: 'app-timeline',
-  imports: [],
+  imports: [HeaderName],
   templateUrl: './timeline.html',
   styleUrl: './timeline.css'
 })
 export class Timeline implements AfterViewInit{
   infos = [
-    {text: "started coding at 14"},
-    {text: "first job at 16"},
-    {text: "graduated high school at 18"},
+    {text: "started coding at 14", year: "2023"},
+    {text: "first job at 16", year: "2024"},
+    {text: "graduated high school at 18", year: "2025"},
   ];
 
   loadInCards() {
@@ -41,7 +42,7 @@ export class Timeline implements AfterViewInit{
           `
         <div class="card m-5 p-3">
           <div class="card-body">
-            <h5 class="card-title">hello</h5>
+            <h5 class="card-title">${this.infos[count].year}</h5>
             <p class="card-text">${this.infos[count].text}</p>
             <p class="card-text"><small class="text-muted">hello</small></p>
           </div>
@@ -60,6 +61,14 @@ export class Timeline implements AfterViewInit{
       else if(window.innerWidth >= 768) {
         createdDiv.style.borderLeft = '2px solid #800ac4';
         console.log("left")
+      }
+      else
+      {
+        createdDiv.style.borderTop = '2px solid #800ac4';
+      }
+
+      if(count >= this.infos.length) {
+        createdDiv.style.borderBottom = '2px solid #800ac4';
       }
       container?.appendChild(createdDiv);
       i++;

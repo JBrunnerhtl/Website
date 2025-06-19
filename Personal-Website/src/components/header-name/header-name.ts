@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-header-name',
@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class HeaderName {
-  title =  "Hi, I'm Jan";
+  @Input() title: string = '';
 
 }
 
