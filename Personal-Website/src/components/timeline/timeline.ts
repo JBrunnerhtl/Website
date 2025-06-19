@@ -14,10 +14,13 @@ export class Timeline implements AfterViewInit{
   ];
 
   loadInCards() {
+
     if (typeof document === 'undefined' || typeof window === 'undefined') return;
     const outerContainer = document.querySelector('.container');
     if (!outerContainer) return;
     const container = document.createElement('div');
+
+
     outerContainer.appendChild(container);
     if (window.innerWidth < 768) {
       container.className = 'row row-cols-1';
@@ -25,10 +28,10 @@ export class Timeline implements AfterViewInit{
     } else {
       container.className = 'row row-cols-2';
     }
-    let count = 0;
-    let divisor = 2;
-    let i = 0;
-
+    let count = 0; // Counter of the position in the infos array
+    let divisor = 2; // Divisor to determine the border position
+    let i = 0; // Counter to check on which side I am currently
+    // Create a new div for each info and add it to the container
     while (count < this.infos.length) {
       const createdDiv = document.createElement('div');
       createdDiv.className = 'col';
@@ -49,11 +52,8 @@ export class Timeline implements AfterViewInit{
         divisor++;
 
       }
-      else
-      {
-         createdDiv.className += 'm-5';
-      }
-      if (window.innerWidth >= 768 && i+1 % 2 !== 0) {
+
+      if (window.innerWidth >= 768 && (i+1) % 2 !== 0) {
         createdDiv.style.borderRight = '2px solid #800ac4';
         console.log("right")
       }
@@ -64,9 +64,18 @@ export class Timeline implements AfterViewInit{
       container?.appendChild(createdDiv);
       i++;
 
-
-
     }
+    // Add an extra container so that both sides have a border and not only the left or the right side
+    const extraContainer = document.createElement('div');
+    extraContainer.className = 'col';
+    if(i % 2 !== 0 && window.innerWidth >= 768) {
+      extraContainer.style.borderLeft = '2px solid #800ac4';
+    }
+    else
+    {
+      extraContainer.style.borderRight = '2px solid #800ac4';
+    }
+    container?.appendChild(extraContainer);
   }
 
   ngAfterViewInit(): void {
