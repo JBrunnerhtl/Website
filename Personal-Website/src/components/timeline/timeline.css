@@ -1,9 +1,9 @@
-div.border-right
+.border-right
 {
-  border-right: 2rem solid #800ac4;
+  border-right: 2px solid #800ac4;
 }
 
-div.border-left
+.border-left
 {
-  border-left: 2rem solid #800ac4;
+  border-left: 2px solid #800ac4;
 }

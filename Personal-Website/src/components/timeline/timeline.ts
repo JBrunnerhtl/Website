@@ -13,23 +13,18 @@ export class Timeline implements AfterViewInit{
     {text: "graduated high school at 18"},
   ];
 
-  loadInCards()
-  {
+  loadInCards() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') return;
     const outerContainer = document.querySelector('.container');
     if (!outerContainer) return;
     const container = document.createElement('div');
     outerContainer.appendChild(container);
-    if(window.innerWidth < 768)
-    {
+    if (window.innerWidth < 768) {
       container.className = 'row row-cols-1';
       outerContainer.className.replace('justify-content-center', 'justify-content-start');
-    }
-    else
-    {
+    } else {
       container.className = 'row row-cols-2';
     }
-
-
     let count = 0;
     let divisor = 2;
     let i = 0;
@@ -38,8 +33,7 @@ export class Timeline implements AfterViewInit{
       const createdDiv = document.createElement('div');
       createdDiv.className = 'col';
       console.log(count)
-      if(i % divisor === 0 || window.innerWidth < 768)
-      {
+      if (i % divisor === 0 || window.innerWidth < 768) {
         createdDiv.innerHTML =
           `
         <div class="card m-5 p-3">
@@ -53,14 +47,23 @@ export class Timeline implements AfterViewInit{
 
         count++;
         divisor++;
-        createdDiv.className += ' border-right';
+
       }
       else
       {
-        createdDiv.className += ' border-left';
+         createdDiv.className += 'm-5';
+      }
+      if (window.innerWidth >= 768 && i+1 % 2 !== 0) {
+        createdDiv.style.borderRight = '2px solid #800ac4';
+        console.log("right")
+      }
+      else if(window.innerWidth >= 768) {
+        createdDiv.style.borderLeft = '2px solid #800ac4';
+        console.log("left")
       }
       container?.appendChild(createdDiv);
       i++;
+
 
 
     }
