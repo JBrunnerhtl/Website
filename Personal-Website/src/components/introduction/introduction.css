@@ -1,3 +1,15 @@
 p{
   color: #800ac4;
+  animation: fly-in-from-bottom 1s ease-in-out;
+}
+
+@keyframes fly-in-from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
