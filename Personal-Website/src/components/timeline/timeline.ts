@@ -1,11 +1,12 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 import {HeaderName} from '../header-name/header-name';
 
 @Component({
   selector: 'app-timeline',
   imports: [HeaderName],
   templateUrl: './timeline.html',
-  styleUrl: './timeline.css'
+  styleUrls: ['./timeline.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class Timeline implements AfterViewInit{
   infos = [
@@ -55,11 +56,13 @@ export class Timeline implements AfterViewInit{
       }
 
       if (window.innerWidth >= 768 && (i+1) % 2 !== 0) {
-        createdDiv.style.borderRight = '2px solid #800ac4';
+        createdDiv.className += ' border-right';
+        createdDiv.style.animation = 'fly-in-from-right 2s ease-in-out forwards';
         console.log("right")
       }
       else if(window.innerWidth >= 768) {
-        createdDiv.style.borderLeft = '2px solid #800ac4';
+        createdDiv.className += ' border-left';
+        createdDiv.style.animation = 'fly-in-from-left 2s ease-in-out forwards';
         console.log("left")
       }
       else
@@ -67,8 +70,8 @@ export class Timeline implements AfterViewInit{
         createdDiv.style.borderTop = '2px solid #800ac4';
       }
 
-      if(count >= this.infos.length) {
-        createdDiv.style.borderBottom = '2px solid #800ac4';
+      if(count >= this.infos.length && window.innerWidth < 768) { // It is for mobile if it is the last element than add a bottom border
+        createdDiv.className += ' border-bottom';
       }
       container?.appendChild(createdDiv);
       i++;
@@ -79,10 +82,12 @@ export class Timeline implements AfterViewInit{
     extraContainer.className = 'col';
     if(i % 2 !== 0 && window.innerWidth >= 768) {
       extraContainer.style.borderLeft = '2px solid #800ac4';
+      extraContainer.style.animation = 'fly-in-from-left 2s ease-in-out forwards';
     }
     else
     {
       extraContainer.style.borderRight = '2px solid #800ac4';
+      extraContainer.style.animation = 'fly-in-from-right 2s ease-in-out forwards';
     }
     container?.appendChild(extraContainer);
   }
