@@ -68,10 +68,10 @@ export class Timeline implements AfterViewInit{
       } else {
         createdDiv.className += ' border-top';
         if ((i + 1) % 2 === 0) {
-          createdDiv.style.animation = 'fly-in-from-right 2s ease-in-out forwards';
+          createdDiv.style.animation = 'fly-in-from-right-without-breaks 2s ease-in-out forwards';
 
         } else {
-          createdDiv.style.animation = 'fly-in-from-left 2s ease-in-out forwards';
+          createdDiv.style.animation = 'fly-in-from-left-without-breaks 2s ease-in-out forwards';
         }
       }
 
