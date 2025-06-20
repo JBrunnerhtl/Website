@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
 import {HeaderName} from '../header-name/header-name';
 
 @Component({
@@ -14,11 +14,11 @@ export class Timeline implements AfterViewInit{
     {text: "first job at 16", year: "2024"},
     {text: "graduated high school at 18", year: "2025"},
   ];
-
+  @ViewChild('container', { static: true }) containerRef!: ElementRef;
   loadInCards() {
 
     if (typeof document === 'undefined' || typeof window === 'undefined') return;
-    const outerContainer = document.querySelector('.container');
+    const outerContainer = this.containerRef.nativeElement;
     if (!outerContainer) return;
     const container = document.createElement('div');
 
