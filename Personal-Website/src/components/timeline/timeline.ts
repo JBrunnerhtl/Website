@@ -10,9 +10,10 @@ import {HeaderName} from '../header-name/header-name';
 })
 export class Timeline implements AfterViewInit{
   infos = [
-    {text: "started coding at 14", year: "2023"},
-    {text: "first job at 16", year: "2024"},
-    {text: "graduated high school at 18", year: "2025"},
+    {text: "I started coding at a age of 14 with JavaScript, HTML and CSS", year: "2022"},
+    {text: "I joined the HTL Leonding, where I learned C#", year: "2023"},
+    {text: "Currently I am in the second half-year of the school year", year: "2024"},
+    {text: "I am now in the second grade of the HTL Leonding. I am learning C#, C, HTML, CSS, JavaScript, TypeScript, Angular and Rust", year: "2025"},
   ];
   @ViewChild('container', { static: false }) containerRef!: ElementRef;
   loadInCards() {
@@ -34,13 +35,14 @@ export class Timeline implements AfterViewInit{
     let count = 0; // Counter of the position in the infos array
     let divisor = 2; // Divisor to determine the border position
     let i = 0; // Counter to check on which side I am currently
+    let oneOrThree: boolean = false;
     const windowSize = window.innerWidth; // Get the current window size
     // Create a new div for each info and add it to the container
     while (count < this.infos.length) {
       const createdDiv = document.createElement('div');
       createdDiv.className = 'col';
 
-      if (i % divisor === 0 || window.innerWidth < 768) {
+      if (i % divisor === 0 || windowSize < 768) {
         createdDiv.innerHTML =
           `
         <div class="card m-5 p-3">
@@ -53,7 +55,25 @@ export class Timeline implements AfterViewInit{
         `
 
         count++;
-        divisor++;
+        if(i === 0)
+        {
+          divisor++;
+        }
+        else
+        {
+          if(!oneOrThree)
+          {
+            divisor++;
+            oneOrThree = true;
+          }
+          else
+          {
+            oneOrThree = false;
+            divisor += 3;
+          }
+        }
+
+
 
       }
 
