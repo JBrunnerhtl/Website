@@ -47,7 +47,7 @@ export class Timeline implements AfterViewInit{
           `
         <div class="card m-5 p-3">
           <div class="card-body">
-            <h5 class="card-title">${this.infos[count].year}</h5>
+            <h5 class="card-title fw-bold">${this.infos[count].year}</h5>
             <p class="card-text">${this.infos[count].text}</p>
 
           </div>
