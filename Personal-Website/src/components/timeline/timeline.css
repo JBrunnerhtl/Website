@@ -88,3 +88,12 @@
     opacity: 1;
   }
 }
+.card {
+  border: 2px solid #800ac4;
+  border-radius: 8px;
+  background-color: #09080A;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card-title, .card-text, .text-muted {
+  color: #800ac4;
+}
