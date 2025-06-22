@@ -8,7 +8,7 @@ import {Introduction} from '../components/introduction/introduction';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline, Introduction],
+  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline],
   templateUrl: './app.html'
 
 })

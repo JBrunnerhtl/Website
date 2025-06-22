@@ -6,7 +6,7 @@ import {Introduction} from '../introduction/introduction';
 @Component({
   selector: 'app-programming-languages',
   imports: [
-    HeaderName,
+
     Introduction,
 
   ],

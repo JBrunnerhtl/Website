@@ -9,11 +9,13 @@ import {HeaderName} from '../header-name/header-name';
   encapsulation: ViewEncapsulation.None
 })
 export class Timeline implements AfterViewInit{
+
   infos = [
     {text: "I started coding at a age of 14 with JavaScript, HTML and CSS", year: "2022"},
     {text: "I joined the HTL Leonding, where I learned C#", year: "2023"},
     {text: "Currently I am in the second half-year of the school year", year: "2024"},
     {text: "I am now in the second grade of the HTL Leonding. I am learning C#, C, HTML, CSS, JavaScript, TypeScript, Angular and Rust", year: "2025"},
+    {text: "I am curious about the future and what it will bring. I am looking forward to learning more about programming and new technology.", year: "2026"},
   ];
   @ViewChild('container', { static: false }) containerRef!: ElementRef;
   loadInCards() {
@@ -74,31 +76,8 @@ export class Timeline implements AfterViewInit{
         }
 
 
-
       }
 
-      if (windowSize >= 768 && (i + 1) % 2 !== 0) {
-        createdDiv.className += ' border-right';
-        createdDiv.style.animation = 'fly-in-from-right 2s ease-in-out forwards';
-        console.log("right")
-      } else if (windowSize >= 768) {
-        createdDiv.className += ' border-left';
-        createdDiv.style.animation = 'fly-in-from-left 2s ease-in-out forwards';
-        console.log("left")
-      } else {
-        createdDiv.className += ' border-top';
-        if ((i + 1) % 2 === 0) {
-          createdDiv.style.animation = 'fly-in-from-right-without-breaks 2s ease-in-out forwards';
-
-        } else {
-          createdDiv.style.animation = 'fly-in-from-left-without-breaks 2s ease-in-out forwards';
-        }
-      }
-
-
-      if (count >= this.infos.length && windowSize < 768) { // It is for mobile if it is the last element than add a bottom border
-        createdDiv.className += ' border-bottom';
-      }
       container?.appendChild(createdDiv);
       i++;
 
@@ -107,17 +86,48 @@ export class Timeline implements AfterViewInit{
     if (windowSize >= 768) {
       const extraContainer = document.createElement('div');
       extraContainer.className = 'col';
-      if (i % 2 !== 0) {
-        extraContainer.className += ' border-left';
-        extraContainer.style.animation = 'fly-in-from-left 2s ease-in-out forwards';
-      } else {
-        extraContainer.className += ' border-right';
-        extraContainer.style.animation = 'fly-in-from-right 2s ease-in-out forwards';
-      }
       container?.appendChild(extraContainer);
     }
   }
+
+  checkCardsInView() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    const windowSize = window.innerWidth;
+
+    const cards = this.containerRef.nativeElement.querySelectorAll('.col');
+    cards.forEach((card: HTMLElement, i: number) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (windowSize >= 768 && i % 2 === 0) {
+          if(!card.className.includes('border-right')) card.className += ' border-right';
+          card.style.animation = 'fly-in-from-right-without-breaks 2s ease-in-out forwards';
+          console.log("right")
+        } else if (windowSize >= 768) {
+          if(!card.className.includes('border-left')) card.className += ' border-left';
+          card.style.animation = 'fly-in-from-left-without-breaks 2s ease-in-out forwards';
+          console.log("left")
+        } else {
+
+          if ((i + 1) % 2 === 0) {
+            if(!card.className.includes('border-top')) card.className += ' border-top';
+            card.style.animation = 'fly-in-from-right-without-breaks 2s ease-in-out forwards';
+
+          } else {
+            if(!card.className.includes('border-top')) card.className += ' border-top';
+            card.style.animation = 'fly-in-from-left-without-breaks 2s ease-in-out forwards';
+          }
+        }
+      }
+      if (i+1 >= this.infos.length && windowSize < 768) { // It is for mobile if it is the last element than add a bottom border
+        if (!card.className.includes('border-bottom')) card.className += ' border-bottom';
+      }
+    });
+  }
+
   ngAfterViewInit(): void {
     this.loadInCards();
+    if( typeof window === 'undefined' || typeof document === 'undefined') return;
+    window.addEventListener('scroll', this.checkCardsInView.bind(this));
+    this.checkCardsInView();
   }
 }
