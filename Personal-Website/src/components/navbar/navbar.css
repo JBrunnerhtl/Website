@@ -15,3 +15,7 @@ nav.navbar {
 {
   color: #7C02C4 !important;
 }
+.text-in-nav:hover
+{
+  color: white !important;
+}

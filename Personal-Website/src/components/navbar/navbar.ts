@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
+import {NavigationEnd, Router, RouterLink} from '@angular/router';
+import {filter} from 'rxjs';
 
 
 @Component({
@@ -13,20 +14,28 @@ import {Router, RouterLink} from '@angular/router';
 })
 export class Navbar{
   constructor(private router : Router) {
-    // You can inject the Router service if you need to navigate programmatically
+    if(!this.router) return;
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        const fragment = this.router.parseUrl(this.router.url).fragment;
+        if (fragment) {
+          const el = document.getElementById(fragment);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
   }
-  links = [
-    {name: 'Home', url: '/'},
-    {name: 'About', url: '/about'},
-    {name: 'Contact', url: '/contact'},
-    ];
+
 
   navbarItems = [
-    {name: 'example1', url: '/'},
-    {name: 'example2', url: '/about'},
-    {name: 'example3', url: '/contact'}
+    {name: 'Programming Languages', url: '/', fragment: 'programming-languages'},
+    {name: 'Journey', url: '/', fragment: 'journey'},
   ];
+  scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-
-  title = "Navbar";
+  title = "Home";
 }
