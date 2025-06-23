@@ -1,0 +1,21 @@
+<app-introduction [title]="'My projects'" [text]="'Here are my projects, that I have done'"></app-introduction>
+  <div class = "row row-cols-1" id = "projects">
+    @for (repo of repos; track repo.name) {
+      <div class = "col m-5">
+        <div class="card original-card">
+          <div class="card-body">
+            <div class = "row row-cols-2">
+              <div class = "col text-start">
+                <h5 class="card-title">{{repo.name}}</h5>
+              </div>
+              <div class = "col text-end">
+                <a class="btn btn-primary" [href]="repo.url" target="_blank">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+

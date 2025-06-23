@@ -1,0 +1,22 @@
+
+h5.loading
+{
+  text-align: center;
+  color: #800ac4;
+}
+@keyframes present {
+  from
+  {
+    opacity: 0;
+  }
+  to
+  {
+    opacity: 1;
+  }
+}
+.row
+{
+  justify-content: center;
+  align-content: center;
+}
+

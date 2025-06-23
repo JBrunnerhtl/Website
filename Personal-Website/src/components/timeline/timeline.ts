@@ -101,11 +101,10 @@ export class Timeline implements AfterViewInit{
         if (windowSize >= 768 && i % 2 === 0) {
           if(!card.className.includes('border-right')) card.className += ' border-right';
           card.style.animation = 'fly-in-from-right-without-breaks 1s ease-in-out forwards';
-          console.log("right")
+
         } else if (windowSize >= 768) {
           if(!card.className.includes('border-left')) card.className += ' border-left';
           card.style.animation = 'fly-in-from-left-without-breaks 1s ease-in-out forwards';
-          console.log("left")
         } else {
 
           if ((i + 1) % 2 === 0) {
