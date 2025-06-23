@@ -5,10 +5,11 @@ import {HeaderName} from '../components/header-name/header-name';
 import {ProgrammingLanguages} from '../components/programming-languages/programming-languages';
 import {Timeline} from '../components/timeline/timeline';
 import {Introduction} from '../components/introduction/introduction';
+import {Projects} from '../components/projects/projects';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline],
+  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline, Projects],
   templateUrl: './app.html'
 
 })

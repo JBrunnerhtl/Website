@@ -25,7 +25,7 @@ export class Projects implements AfterViewInit {
   ngAfterViewInit(): void {
     if(typeof document === 'undefined' || typeof window === 'undefined') return;
     window.addEventListener('scroll', (event: Event) => {
-      const elements = document.querySelectorAll('.original-card');
+      const elements = document.querySelectorAll('.card-project');
       console.log(elements);
       if (elements.length === 0) return;
       elements.forEach(element => {

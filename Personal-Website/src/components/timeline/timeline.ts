@@ -47,10 +47,10 @@ export class Timeline implements AfterViewInit{
       if (i % divisor === 0 || windowSize < 768) {
         createdDiv.innerHTML =
           `
-        <div class="card m-5 p-3">
+        <div class="card m-5 p-3 card-timeline">
           <div class="card-body">
-            <h5 class="card-title fw-bold">${this.infos[count].year}</h5>
-            <p class="card-text">${this.infos[count].text}</p>
+            <h5 class="card-title fw-bold card-title-timeline">${this.infos[count].year}</h5>
+            <p class="card-text card-text-timeline">${this.infos[count].text}</p>
 
           </div>
         </div>

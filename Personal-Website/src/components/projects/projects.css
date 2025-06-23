@@ -1,9 +1,4 @@
 
-h5.loading
-{
-  text-align: center;
-  color: #800ac4;
-}
 @keyframes present {
   from
   {
@@ -14,9 +9,22 @@ h5.loading
     opacity: 1;
   }
 }
-.row
-{
-  justify-content: center;
-  align-content: center;
+
+.card-project {
+  border: 2px solid #800ac4;
+  border-radius: 8px;
+  background-color: #09080A;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+.card-title-project, .card-text-project, .text-muted-project{
+  color: #800ac4;
 }
 
+div.original-card-project {
+  background-color: #09080A;
+}
+div#projects
+{
+  width: 70% !important;
+}

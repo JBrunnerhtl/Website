@@ -18,25 +18,7 @@ div.border-bottom
   border-bottom: 2px solid #800ac4 !important;
 }
 
-hr.horizontal-line
-{
-  color: #800ac4 !important;
-  background-color: #800ac4 !important;
-  height: 2px !important;
-  border: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
 
-
-}
-div.vertical-line
-{
-  width: 2px !important;
-  background-color: #800ac4 !important;
-  height: 100% !important;
-  margin: 0 auto !important;
-}
 
 @keyframes fly-in-from-left-without-breaks {
   from
@@ -63,12 +45,12 @@ div.vertical-line
     opacity: 1;
   }
 }
-.card {
+.card-timeline {
   border: 2px solid #800ac4;
   border-radius: 8px;
   background-color: #09080A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.card-title, .card-text, .text-muted {
+.card-title-timeline, .card-text-timeline, .text-muted-timeline {
   color: #800ac4;
 }
