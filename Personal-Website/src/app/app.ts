@@ -6,10 +6,11 @@ import {ProgrammingLanguages} from '../components/programming-languages/programm
 import {Timeline} from '../components/timeline/timeline';
 import {Introduction} from '../components/introduction/introduction';
 import {Projects} from '../components/projects/projects';
+import {Footer} from '../components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline, Projects],
+  imports: [RouterOutlet, Navbar, HeaderName, ProgrammingLanguages, Timeline, Projects, Footer],
   templateUrl: './app.html'
 
 })

@@ -19,7 +19,7 @@ export class Projects implements AfterViewInit {
       new Repo('My-Website', 'https://github.com/JBrunnerhtl/My-Website'),
       new Repo('Rust-Todo-List', 'https://github.com/JBrunnerhtl/Rust-Todo-List'),
       new Repo('RpnCalculator', 'https://github.com/JBrunnerhtl/RpnCalculator'),
-      new Repo('Todo-List JavaSript', 'https://github.com/JBrunnerhtl/Todo-List'),
+      new Repo('Todo-List JavaScript', 'https://github.com/JBrunnerhtl/Todo-List'),
     ]
 
   ngAfterViewInit(): void {

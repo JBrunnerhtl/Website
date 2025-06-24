@@ -1,0 +1,12 @@
+.text-muted-footer
+{
+  color: #800ac4;
+}
+.footer-container
+{
+  background-color: rgba(128, 10, 196, 0.2); /* halbtransparentes Lila */
+  box-shadow: 0 4px 16px rgba(128, 10, 196, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Für Safari */
+  border-radius: 0.5rem;
+}
