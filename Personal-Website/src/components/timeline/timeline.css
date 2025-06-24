@@ -54,3 +54,12 @@ div.border-bottom
 .card-title-timeline, .card-text-timeline, .text-muted-timeline {
   color: #800ac4;
 }
+div.col-timeline-right
+{
+  transform: translateX(100%);
+}
+
+div.col-timeline-left
+{
+  transform: translateX(-100%);
+}

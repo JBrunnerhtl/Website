@@ -21,7 +21,6 @@ export class Timeline implements AfterViewInit{
   loadInCards() {
 
     if (typeof document === 'undefined' || typeof window === 'undefined') return;
-    console.log(this.containerRef.nativeElement);
     const outerContainer = this.containerRef.nativeElement;
     if (!outerContainer) return;
     const container = document.createElement('div');
@@ -77,6 +76,13 @@ export class Timeline implements AfterViewInit{
 
 
       }
+      if (i % 2 === 0) {
+        createdDiv.className += ' col-timeline-right';
+
+      } else {
+        createdDiv.className += ' col-timeline-left';
+      }
+
 
       container?.appendChild(createdDiv);
       i++;
@@ -107,7 +113,7 @@ export class Timeline implements AfterViewInit{
           card.style.animation = 'fly-in-from-left-without-breaks 1s ease-in-out forwards';
         } else {
 
-          if ((i + 1) % 2 === 0) {
+          if (i % 2 === 0) {
             if(!card.className.includes('border-top')) card.className += ' border-top';
             card.style.animation = 'fly-in-from-right-without-breaks 1s ease-in-out forwards';
 
