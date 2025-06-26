@@ -1,4 +1,4 @@
-<app-introduction [title]="'My projects'" [text]="'Here are my projects, that I have done'"></app-introduction>
+<app-introduction [id]="'projects'" [title]="'My projects'" [text]="'Here are my projects, that I have done'"></app-introduction>
 <div class="d-flex flex-column justify-content-center align-items-center">
   @for (repo of repos; track repo.name) {
     <div class="card card-project m-4" style="width: 70%;">

@@ -5,12 +5,17 @@
     </div>
 
     <ul class = "nav col-md-4 justify-content-end list-unstyled d-flex">
-      @for (link of pictures; track link.url) {
-        <div class = "footer-container">
-        <a [href]="link.url" class = "text-body-secondary">
-          <img [src]="link.svg" width="48" height="48">
-        </a>
-        </div>
+      @for (link of pictures; track link.name) {
+        @if (link?.url) {
+          <a [href]="link.url" target="_blank" class = "text-body-secondary m-1">
+            <img [src]="link.svg" width="48" height="48">
+          </a>
+        } @else {
+          <a [href]="'mailto:'+link.mailto"   target="_blank" class = "text-body-secondary m-1">
+            <img [src]="link.svg" width="48" height="48">
+          </a>
+        }
+
       }
     </ul>
   </footer>

@@ -32,6 +32,7 @@ export class Navbar{
   navbarItems = [
     {name: 'Programming Languages', url: '/', fragment: 'programming-languages'},
     {name: 'Journey', url: '/', fragment: 'journey'},
+    {name: 'Projects', url: '/', fragment: 'projects'},
   ];
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
