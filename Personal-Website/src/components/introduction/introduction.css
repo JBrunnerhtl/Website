@@ -1,5 +1,5 @@
 p{
-  color: #800ac4;
+  color: var(--main-color) !important;
   animation: fly-in-from-bottom 1s ease-in-out;
 }
 

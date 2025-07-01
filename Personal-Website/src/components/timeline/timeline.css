@@ -1,21 +1,21 @@
 div.card.m-5.p-3.border-right
 {
-  border-right: 2px solid #800ac4 !important;
+  border-right: 2px solid var(--main-color) !important;
 }
 
 div.border-left
 {
-  border-left: 2px solid #800ac4 !important;
+  border-left: 2px solid var(--main-color) !important;
 
 }
 
 div.border-top
 {
-  border-top: 2px solid #800ac4 !important;
+  border-top: 2px solid var(--main-color) !important;
 }
 div.border-bottom
 {
-  border-bottom: 2px solid #800ac4 !important;
+  border-bottom: 2px solid var(--main-color) !important;
 }
 
 
@@ -46,13 +46,13 @@ div.border-bottom
   }
 }
 .card-timeline {
-  border: 2px solid #800ac4;
+  border: 2px solid var(--main-color);
   border-radius: 8px;
   background-color: #09080A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card-title-timeline, .card-text-timeline, .text-muted-timeline {
-  color: #800ac4;
+  color: var(--main-color) !important;
 }
 div.col-timeline-right
 {

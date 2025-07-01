@@ -1,16 +1,21 @@
 h1.blur-text{
 
   color: transparent;
-  text-shadow: 0 0 16px #800ac4, 0 0 32px #800ac4;
+  text-shadow: 0 0 16px currentColor, 0 0 32px currentColor;
   animation: fly-in-from-bottom 1s ease-in-out;
 }
 h1.normal-text
 {
-  color: #7C02C4 !important;
+  color: var(--main-color);
   animation: fly-in-from-bottom 1s ease-in-out;
 
 }
-
+h1.blur-text
+{
+  color: transparent;
+  text-shadow: 0 0 16px var(--main-color), 0 0 32px var(--main-color);
+  animation: fly-in-from-bottom 1s ease-in-out;
+}
 @keyframes fly-in-from-bottom {
   from{
     transform: translateY(100%);

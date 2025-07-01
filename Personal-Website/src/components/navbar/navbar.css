@@ -13,7 +13,7 @@ nav.navbar {
 
 .text-in-nav
 {
-  color: #7C02C4 !important;
+  color: var(--main-color) !important;
 }
 .text-in-nav:hover
 {

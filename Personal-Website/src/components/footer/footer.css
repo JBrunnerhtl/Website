@@ -1,5 +1,5 @@
 .text-muted-footer
 {
-  color: #800ac4;
+  color: var(--main-color) !important;
 }
 

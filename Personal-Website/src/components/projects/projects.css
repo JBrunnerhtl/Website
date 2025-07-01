@@ -11,14 +11,14 @@
 }
 
 .card-project {
-  border: 2px solid #800ac4;
+  border: 2px solid var(--main-color);
   border-radius: 8px;
   background-color: #09080A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   opacity: 0;
 }
 .card-title-project, .card-text-project, .text-muted-project{
-  color: #800ac4;
+  color: var(--main-color) !important;
 }
 
 div.original-card-project {
