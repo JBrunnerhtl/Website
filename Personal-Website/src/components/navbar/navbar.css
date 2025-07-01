@@ -10,6 +10,15 @@ nav.navbar {
   margin: 0;
 
 }
+.dropdown-background
+{
+  background-color: #09080A;
+}
+a.dropdown-item-theme:hover
+{
+  background-color: #09080A;
+  color: white;
+}
 
 .text-in-nav
 {

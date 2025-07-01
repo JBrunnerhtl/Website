@@ -9,10 +9,23 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class = "nav-item fs-5"><a [routerLink]="'/'" (click)="scrollToTop()" class = "nav-link text-in-nav">{{title}}</a></li>
         @for (item of navbarItems; track item) {
+        @if (item.type === 'dropdown') {
+          <li class="nav-item dropdown fs-5">
+            <a class="dropdown-toggle text-in-nav nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{item.name}}
+            </a>
+            <ul class="dropdown-menu dropdown-background">
+              @for (color of colors; track color.color) {
+                <li><a class="dropdown-item nav-link text-in-nav dropdown-item-theme" (click)="changeTheme(color.color)">{{color.name}}</a></li>
+              }
+            </ul>
+          </li>
+          } @else {
           <li class = "nav-item fs-5"><a [routerLink]="item.url" [fragment]="item.fragment" class = "nav-link text-in-nav">{{item.name}}</a></li>
+          }
         }
-
       </ul>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>

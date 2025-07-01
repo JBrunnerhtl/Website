@@ -30,13 +30,29 @@ export class Navbar{
 
 
   navbarItems = [
-    {name: 'Programming Languages', url: '/', fragment: 'programming-languages'},
-    {name: 'Journey', url: '/', fragment: 'journey'},
-    {name: 'Projects', url: '/', fragment: 'projects'},
+    {name: 'Programming Languages', url: '/', fragment: 'programming-languages', type: "link"},
+    {name: 'Journey', url: '/', fragment: 'journey', type: "link"},
+    {name: 'Projects', url: '/', fragment: 'projects', type: "link"},
+    {name: 'Themes', url: '/', fragment: '/', type: 'dropdown'}
+  ];
+
+  colors = [
+    { name: 'Aurora Dream', color: '#800ac4' },
+    { name: 'Midnight Code', color: '#22223b' },
+    { name: 'Solar Flare', color: '#ffb300' },
+    { name: 'Oceanic Depths', color: '#1976d2' },
+    { name: 'Neon Pulse', color: '#00ffc3' },
+    { name: 'Forest Whisper', color: '#388e3c' },
+    { name: 'Cyberpunk Night', color: '#ff0080' },
+    { name: 'Sunset Boulevard', color: '#ff7043' },
+    { name: 'Arctic Breeze', color: '#b2ebf2' },
+    { name: 'Vintage Terminal', color: '#00ff00' }
   ];
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
+  changeTheme = (color: string) => {
+    document.documentElement.style.setProperty('--main-color', color);
+  }
   title = "Home";
 }
