@@ -38,7 +38,6 @@ export class Navbar{
 
   colors = [
     { name: 'Aurora Dream', color: '#800ac4' },
-    { name: 'Midnight Code', color: '#22223b' },
     { name: 'Solar Flare', color: '#ffb300' },
     { name: 'Oceanic Depths', color: '#1976d2' },
     { name: 'Neon Pulse', color: '#00ffc3' },
@@ -46,7 +45,7 @@ export class Navbar{
     { name: 'Cyberpunk Night', color: '#ff0080' },
     { name: 'Sunset Boulevard', color: '#ff7043' },
     { name: 'Arctic Breeze', color: '#b2ebf2' },
-    { name: 'Vintage Terminal', color: '#00ff00' }
+
   ];
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
