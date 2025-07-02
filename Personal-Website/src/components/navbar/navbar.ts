@@ -53,5 +53,8 @@ export class Navbar{
   changeTheme = (color: string) => {
     document.documentElement.style.setProperty('--main-color', color);
   }
+
+
+
   title = "Home";
 }
