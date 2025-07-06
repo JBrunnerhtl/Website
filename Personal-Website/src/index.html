@@ -21,5 +21,13 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    let color = "#800ac4";
+    if(localStorage.getItem('theme'))
+    {
+      color = localStorage.getItem('theme');
+    }
+    document.documentElement.style.setProperty('--main-color', color);
+  </script>
 </body>
 </html>

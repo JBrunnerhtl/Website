@@ -52,6 +52,8 @@ export class Navbar{
   }
   changeTheme = (color: string) => {
     document.documentElement.style.setProperty('--main-color', color);
+    if(localStorage.getItem('theme')) localStorage.removeItem('theme');
+    localStorage.setItem('theme', color);
   }
 
 
