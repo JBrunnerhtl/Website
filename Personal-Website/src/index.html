@@ -14,20 +14,37 @@
     :root
     {
       --main-color: #800ac4;
+      --button-project-color: #a259e6;
+      --button-project-text-color: #fff;
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/181450496?s=400&v=4">
 </head>
 <body>
-  <app-root></app-root>
   <script>
     let color = "#800ac4";
+    let buttonProjectColor = '#a259e6';
+    let buttonProjectTextColor = '#fff';
     if(localStorage.getItem('theme'))
     {
       color = localStorage.getItem('theme');
     }
+    if (localStorage.getItem('button-color'))
+    {
+      buttonProjectColor = localStorage.getItem('button-color')
+    }
+    if(localStorage.getItem('button-text-color'))
+    {
+      buttonProjectTextColor = localStorage.getItem('button-text-color')
+    }
     document.documentElement.style.setProperty('--main-color', color);
+    document.documentElement.style.setProperty('--button-project-color', buttonProjectColor);
+    document.documentElement.style.setProperty('--button-project-text-color', buttonProjectTextColor);
+    console.log(getComputedStyle(document.documentElement).getPropertyValue('--main-color'));
+    console.log(getComputedStyle(document.documentElement).getPropertyValue('--button-project-color'));
+
   </script>
+  <app-root></app-root>
 </body>
 </html>

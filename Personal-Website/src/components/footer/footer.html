@@ -7,11 +7,11 @@
     <ul class = "nav col-md-4 justify-content-end list-unstyled d-flex">
       @for (link of pictures; track link.name) {
         @if (link?.url) {
-          <a [href]="link.url" target="_blank" class = "text-body-secondary m-1">
+          <a [href]="link.url" target="_blank" class = "text-body-secondary m-1 logos">
             <img [src]="link.svg" width="48" height="48">
           </a>
         } @else {
-          <a [href]="'mailto:'+link.mailto"   target="_blank" class = "text-body-secondary m-1">
+          <a [href]="'mailto:'+link.mailto"   target="_blank" class = "text-body-secondary m-1 logos">
             <img [src]="link.svg" width="48" height="48">
           </a>
         }

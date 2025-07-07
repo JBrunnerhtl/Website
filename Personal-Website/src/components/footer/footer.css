@@ -2,4 +2,19 @@
 {
   color: var(--main-color) !important;
 }
+@keyframes hover-effect {
+  from
+  {
+    box-shadow: 0px 0px 0px black;
+  }
+  to
+  {
+    box-shadow: 0px 4px 2px 0px var(--main-color) !important;
 
+  }
+}
+
+.logos:hover
+{
+  animation: hover-effect 1s forwards;
+}

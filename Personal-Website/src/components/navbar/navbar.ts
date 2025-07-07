@@ -37,23 +37,30 @@ export class Navbar{
   ];
 
   colors = [
-    { name: 'Aurora Dream', color: '#800ac4' },
-    { name: 'Solar Flare', color: '#ffb300' },
-    { name: 'Oceanic Depths', color: '#1976d2' },
-    { name: 'Neon Pulse', color: '#00ffc3' },
-    { name: 'Forest Whisper', color: '#388e3c' },
-    { name: 'Cyberpunk Night', color: '#ff0080' },
-    { name: 'Sunset Boulevard', color: '#ff7043' },
-    { name: 'Arctic Breeze', color: '#b2ebf2' },
+    { name: 'Aurora Dream', color: '#800ac4', buttonColor: '#a259e6', buttonTextColor: '#fff' },
+    { name: 'Solar Flare', color: '#ffb300', buttonColor: '#ffd54f', buttonTextColor: '#222' },
+    { name: 'Oceanic Depths', color: '#1976d2', buttonColor: '#64b5f6', buttonTextColor: '#fff' },
+    { name: 'Neon Pulse', color: '#00ffc3', buttonColor: '#1de9b6', buttonTextColor: '#222' },
+    { name: 'Forest Whisper', color: '#388e3c', buttonColor: '#81c784', buttonTextColor: '#222' },
+    { name: 'Cyberpunk Night', color: '#ff0080', buttonColor: '#ff5ec8', buttonTextColor: '#fff' },
+    { name: 'Sunset Boulevard', color: '#ff7043', buttonColor: '#ffab91', buttonTextColor: '#222' },
+    { name: 'Arctic Breeze', color: '#b2ebf2', buttonColor: '#e0f7fa', buttonTextColor: '#222' }
 
   ];
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  changeTheme = (color: string) => {
+  changeTheme = (color: string, buttonColor: string = 'error', buttonTextColor: string) => {
+
     document.documentElement.style.setProperty('--main-color', color);
-    if(localStorage.getItem('theme')) localStorage.removeItem('theme');
+    document.documentElement.style.setProperty('--button-project-color', buttonColor);
+    document.documentElement.style.setProperty('--button-project-text-color', buttonTextColor);
+    if(localStorage.getItem('theme') ) localStorage.removeItem('theme');
+    if(localStorage.getItem('button-color')) localStorage.removeItem('button-color');
+    if (localStorage.getItem('button-text-color')) localStorage.removeItem('button-text-color');
     localStorage.setItem('theme', color);
+    localStorage.setItem('button-color', buttonColor);
+    localStorage.setItem('button-text-color', buttonTextColor);
   }
 
 

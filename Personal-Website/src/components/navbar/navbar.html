@@ -14,8 +14,8 @@
               {{item.name}}
             </a>
             <ul class="dropdown-menu dropdown-background">
-              @for (color of colors; track color.color) {
-                <li><a class="dropdown-item nav-link text-in-nav dropdown-item-theme" (click)="changeTheme(color.color)">{{color.name}}</a></li>
+              @for (color of colors; track color.buttonTextColor) {
+                <li><a class="dropdown-item nav-link text-in-nav dropdown-item-theme" (click)="changeTheme(color.color, color.buttonColor, color.buttonTextColor)">{{color.name}}</a></li>
               }
             </ul>
           </li>
@@ -24,7 +24,7 @@
           }
         }
       </ul>
-      <a href = "https://github.com/JBrunnerhtl" target="_blank"><img src = "https://www.svgrepo.com/show/450156/github.svg" style = "height: 40px" alt = "GitHub profile"></a>
+      <a href = "https://github.com/JBrunnerhtl" target="_blank"><img src = "https://www.svgrepo.com/show/450156/github.svg" class = "github-logo" style = "height: 40px" alt = "GitHub profile"></a>
     </div>
   </div>
 </nav>

@@ -26,7 +26,7 @@ export class Projects implements AfterViewInit {
     if(typeof document === 'undefined' || typeof window === 'undefined') return;
     window.addEventListener('scroll', (event: Event) => {
       const elements = document.querySelectorAll('.card-project');
-      console.log(elements);
+
       if (elements.length === 0) return;
       elements.forEach(element => {
         const rect = element.getBoundingClientRect();

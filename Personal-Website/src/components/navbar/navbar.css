@@ -29,3 +29,19 @@ a.dropdown-item-theme:hover
 {
   color: white !important;
 }
+
+@keyframes hover-effect {
+  from
+  {
+    box-shadow: 0px 0px 0px black;
+  }
+  to
+  {
+    box-shadow: 0px 4px 2px 0px var(--main-color) !important;
+
+  }
+}
+.github-logo:hover
+{
+  animation: hover-effect 1s forwards;
+}
